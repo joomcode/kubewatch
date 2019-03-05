@@ -1,6 +1,6 @@
 # Kubewatch
 
-[![Build Status](https://travis-ci.org/bitnami-labs/kubewatch.svg?branch=master)](https://travis-ci.org/bitnami-labs/kubewatch) [![Join us on Slack](https://s3.eu-central-1.amazonaws.com/ngtuna/join-us-on-slack.png)](https://skippbox.herokuapp.com)
+[![Build Status](https://travis-ci.org/joomcode/kubewatch.svg?branch=master)](https://travis-ci.org/joomcode/kubewatch) [![Join us on Slack](https://s3.eu-central-1.amazonaws.com/ngtuna/join-us-on-slack.png)](https://skippbox.herokuapp.com)
 
 `kubewatch` is a Kubernetes watcher that currently publishes notification to Slack. Run it in your k8s cluster, and you will get event notifications in a slack channel.
 
@@ -87,9 +87,9 @@ $ helm upgrade --install kubewatch stable/kubewatch --values=values-file.yml
 
 ## Installing kubewatch using kubectl
 
-In order to run kubewatch in a Kubernetes cluster quickly, the easiest way is for you to create a [ConfigMap](https://github.com/bitnami-labs/kubewatch/blob/master/kubewatch-configmap.yaml) to hold kubewatch configuration. It contains the SLACK bot API token and channel to use.
+In order to run kubewatch in a Kubernetes cluster quickly, the easiest way is for you to create a [ConfigMap](https://github.com/joomcode/kubewatch/blob/master/kubewatch-configmap.yaml) to hold kubewatch configuration. It contains the SLACK bot API token and channel to use.
 
-An example is provided at [`kubewatch-configmap.yaml`](https://github.com/bitnami-labs/kubewatch/blob/master/kubewatch-configmap.yaml), do not forget to update your own slack channel and token parameters. Alternatively, you could use secrets.
+An example is provided at [`kubewatch-configmap.yaml`](https://github.com/joomcode/kubewatch/blob/master/kubewatch-configmap.yaml), do not forget to update your own slack channel and token parameters. Alternatively, you could use secrets.
 
 Create k8s configmap:
 
@@ -97,7 +97,7 @@ Create k8s configmap:
 $ kubectl create -f kubewatch-configmap.yaml
 ```
 
-Create the [Pod](https://github.com/bitnami-labs/kubewatch/blob/master/kubewatch.yaml) directly, or create your own deployment:
+Create the [Pod](https://github.com/joomcode/kubewatch/blob/master/kubewatch.yaml) directly, or create your own deployment:
 
 ```console
 $ kubectl create -f kubewatch.yaml
@@ -224,7 +224,7 @@ kubewatch           latest              919896d3cd90        3 minutes ago       
 ## Download kubewatch package
 
 ```console
-$ go get -u github.com/bitnami-labs/kubewatch
+$ go get -u github.com/joomcode/kubewatch
 ```
 
 ## Configuration

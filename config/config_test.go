@@ -24,10 +24,11 @@ import (
 
 var configStr = `
 {
+	"namespace": ""
     "handler": {
-        "slack": {
-	  "channel": "slack_channel",
-	  "token": "slack_token"
+		"slack": {
+		"channel": "slack_channel",
+		"token": "slack_token"
 	},
         "webhook": {
             "url": "http://localhost:8080"
