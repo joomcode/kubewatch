@@ -16,7 +16,7 @@ package event
 import (
 	"fmt"
 
-	"github.com/bitnami-labs/kubewatch/pkg/utils"
+	"github.com/joomcode/kubewatch/pkg/utils"
 	apps_v1beta1 "k8s.io/api/apps/v1beta1"
 	batch_v1 "k8s.io/api/batch/v1"
 	api_v1 "k8s.io/api/core/v1"
@@ -34,6 +34,7 @@ type Event struct {
 	Reason    string
 	Status    string
 	Name      string
+	Msg       string
 }
 
 var m = map[string]string{
@@ -109,13 +110,17 @@ func (e *Event) Message() (msg string) {
 			e.Reason,
 		)
 	default:
-		msg = fmt.Sprintf(
-			"A `%s` in namespace `%s` has been `%s`:\n`%s`",
-			e.Kind,
-			e.Namespace,
-			e.Reason,
-			e.Name,
-		)
+		if e.Msg == "" {
+			msg = fmt.Sprintf(
+				"A `%s` in namespace `%s` has been `%s`:\n`%s`",
+				e.Kind,
+				e.Namespace,
+				e.Reason,
+				e.Name,
+			)
+		} else {
+			msg = e.Msg
+		}
 	}
 	return msg
 }
