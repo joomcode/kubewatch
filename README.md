@@ -1,6 +1,6 @@
 # Kubewatch
 
-[![Build Status](https://travis-ci.org/joomcode/kubewatch.svg?branch=master)](https://travis-ci.org/joomcode/kubewatch) [![Join us on Slack](https://s3.eu-central-1.amazonaws.com/ngtuna/join-us-on-slack.png)](https://skippbox.herokuapp.com)
+[![Build Status](https://travis-ci.com/joomcode/kubewatch.svg?branch=master)](https://travis-ci.org/joomcode/kubewatch)
 
 `kubewatch` is a Kubernetes watcher that currently publishes notification to Slack. Run it in your k8s cluster, and you will get event notifications in a slack channel.
 
